@@ -1,4 +1,4 @@
-package dev.lhalegria.dogga.ui.theme
+package dev.lhalegria.dogga.view.ui.theme
 
 import android.app.Activity
 import android.os.Build
