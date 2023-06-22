@@ -1,4 +1,4 @@
-package dev.lhalegria.dogga.ui.theme
+package dev.lhalegria.dogga.view.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
