@@ -1,4 +1,4 @@
-package dev.lhalegria.dogga.view
+package dev.lhalegria.dogga.view.composable
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,12 +13,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BreedDetailsScreen(breed: String, navController: NavHostController?) {
+fun BreedDetail(breed: String, navController: NavHostController?) {
 
     Scaffold(topBar = {
         Toolbar(
