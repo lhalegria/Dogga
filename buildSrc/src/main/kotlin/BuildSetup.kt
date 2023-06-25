@@ -10,7 +10,7 @@ object BuildSetup {
     const val VERSION_CODE = 1
     const val VERSION_NAME = "1.0.0"
 
-    const val COMPOSE_KOTLIN_COMPILER = "1.3.2"
+    const val COMPOSE_KOTLIN_COMPILER = "1.4.7"
 
     const val TEST_INSTRUMENTATION_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
 }
