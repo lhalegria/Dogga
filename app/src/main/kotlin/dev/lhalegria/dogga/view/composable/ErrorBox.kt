@@ -1,9 +1,9 @@
 package dev.lhalegria.dogga.view.composable
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,25 +18,19 @@ import dev.lhalegria.dogga.view.ui.theme.caramelStrong
 
 @Composable
 fun ErrorBox() {
-    Box(Modifier.fillMaxSize()) {
-        Box(
-            Modifier
-                .align(Alignment.Center)
-                .wrapContentSize()
-        ) {
-            Text(
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .padding(16.dp),
-                fontSize = TextUnit(15f, TextUnitType.Sp),
-                textAlign = TextAlign.Center,
-                color = caramelStrong,
-                text = stringResource(id = R.string.error_message)
-            )
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            modifier = Modifier.padding(32.dp),
+            fontSize = TextUnit(15f, TextUnitType.Sp),
+            textAlign = TextAlign.Center,
+            color = caramelStrong,
+            text = stringResource(id = R.string.error_message)
+        )
 
-            TryAgainButton(modifier = Modifier.align(Alignment.BottomCenter)) {
-
-            }
-        }
+        TryAgainButton(modifier = Modifier) { }
     }
 }

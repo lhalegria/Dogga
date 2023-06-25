@@ -9,7 +9,7 @@ object Versions {
     const val ESPRESSO = "3.5.1"
     const val JUNIT = "4.13.2"
     const val KOIN = "3.4.2"
-    const val KOTLIN = "1.8.22"
+    const val KOTLIN = "1.8.21"
     const val OKHTTP = "4.11.0"
     const val RETROFIT = "2.9.0"
 }
