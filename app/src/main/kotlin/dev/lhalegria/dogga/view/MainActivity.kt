@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             DoggaTheme {
-                val breedsState by viewModel.breedStateFlow.collectAsState()
+                val breedsState by viewModel.breedStateFlow.collectAsStateWithLifecycle()
                 when (breedsState) {
                     RequestState.Loading -> LoadingBox()
                     is RequestState.Error -> ErrorBox()

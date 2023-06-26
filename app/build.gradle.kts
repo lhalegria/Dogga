@@ -73,6 +73,7 @@ dependencies {
     implementation(AndroidX.LIFECYCLE)
     implementation(AndroidX.Compose.ACTIVITY)
     implementation(platform(AndroidX.Compose.BOM))
+    implementation(AndroidX.Compose.LIFECYCLE)
     implementation(AndroidX.Compose.UI)
     implementation(AndroidX.Compose.UI_GRAPHICS)
     implementation(AndroidX.Compose.UI_TOOLING)
@@ -83,6 +84,7 @@ dependencies {
     implementation(Other.COIL)
 
     implementation(Koin.KOIN)
+    implementation(Koin.KOIN_COMPOSE)
 
     implementation(Square.RETROFIT)
     implementation(Square.OKHTTP)
