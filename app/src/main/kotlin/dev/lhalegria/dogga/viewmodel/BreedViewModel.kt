@@ -22,7 +22,7 @@ class BreedViewModel(
         get() = _subBreedStateFlow
 
     private val _breedImageStateFlow = MutableStateFlow<RequestState<String>>(RequestState.Loading)
-    val breedImage: StateFlow<RequestState<String>>
+    val breedImageStateFlow: StateFlow<RequestState<String>>
         get() = _breedImageStateFlow
 
     fun getBreeds() = viewModelScope.launch(IO) {
@@ -48,10 +48,10 @@ class BreedViewModel(
     fun getBreedImage(breed: String) = viewModelScope.launch(IO) {
         repository.getBreedImage(breed)
             .onSuccess {
-                _breedImageStateFlow.value = RequestState.Success(it)
+                _breedImageStateFlow.emit(RequestState.Success(it))
             }
             .onFailure {
-                _breedImageStateFlow.value = RequestState.Error(it)
+                _breedImageStateFlow.emit(RequestState.Error(it))
             }
     }
 }

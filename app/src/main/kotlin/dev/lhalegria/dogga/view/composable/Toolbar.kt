@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import dev.lhalegria.dogga.view.ui.theme.caramel
+import dev.lhalegria.dogga.view.ui.theme.Caramel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -29,7 +29,7 @@ fun Toolbar(title: String, icon: ImageVector, iconClickAction: () -> Unit) {
         },
         title = { Text(title) },
         colors = TopAppBarDefaults.smallTopAppBarColors(
-            containerColor = caramel,
+            containerColor = Caramel,
             titleContentColor = Color.White,
             navigationIconContentColor = Color.White
         )

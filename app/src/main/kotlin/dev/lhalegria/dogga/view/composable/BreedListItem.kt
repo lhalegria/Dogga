@@ -29,7 +29,7 @@ fun BreedListItem(dog: BreedModel, clickAction: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
         ) {
-            BreedListItemPicture(dog.photo, 72.dp)
+            BreedListItemIcon()
             BreedListItemText(dog.name, Alignment.Start)
         }
     }

@@ -16,7 +16,10 @@ import dev.lhalegria.dogga.model.BreedModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BreedList(dogs: List<BreedModel>, navController: NavHostController?) {
+fun BreedList(
+    dogs: List<BreedModel>,
+    navController: NavHostController?
+) {
     Scaffold(topBar = {
         Toolbar(
             title = "Breeds list",
@@ -31,7 +34,7 @@ fun BreedList(dogs: List<BreedModel>, navController: NavHostController?) {
             LazyColumn {
                 items(dogs) {
                     BreedListItem(dog = it) {
-                        navController?.navigate("dog_details/${it.name}")
+                        navController?.navigate("breed_details/${it.name}")
                     }
                 }
             }

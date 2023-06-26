@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import dev.lhalegria.dogga.R
-import dev.lhalegria.dogga.view.ui.theme.caramelStrong
+import dev.lhalegria.dogga.view.ui.theme.CaramelStrong
 
 @Composable
 fun EmptyDataBox() {
@@ -27,7 +27,7 @@ fun EmptyDataBox() {
             modifier = Modifier.padding(32.dp),
             fontSize = TextUnit(15f, TextUnitType.Sp),
             textAlign = TextAlign.Center,
-            color = caramelStrong,
+            color = CaramelStrong,
             text = stringResource(id = R.string.empty_data_message)
         )
 
