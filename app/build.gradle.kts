@@ -92,6 +92,9 @@ dependencies {
     implementation(Square.GSON_CONVERTER)
 
     testImplementation(Test.JUNIT)
+    testImplementation(Test.MOCKK)
+    testImplementation(Test.CORE_TESTING)
+    testImplementation(Test.COROUTINES)
     androidTestImplementation(Test.ANDROIDX_JUNIT)
     androidTestImplementation(Test.ESPRESSO)
     androidTestImplementation(platform(AndroidX.Compose.BOM))

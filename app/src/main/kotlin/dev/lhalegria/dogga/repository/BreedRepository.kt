@@ -1,13 +1,14 @@
 package dev.lhalegria.dogga.repository
 
-import dev.lhalegria.dogga.datasource.service.BreedsService
+import dev.lhalegria.dogga.datasource.service.BreedService
+import dev.lhalegria.dogga.exception.ResponseErrorException
+import dev.lhalegria.dogga.exception.ResponseNoBodyException
 import dev.lhalegria.dogga.model.BreedModel
 import dev.lhalegria.dogga.model.mapper.IBreedMapper
 import retrofit2.Response
-import java.io.IOException
 
 class BreedRepository(
-    private val service: BreedsService,
+    private val service: BreedService,
     private val mapper: IBreedMapper
 ) : IBreedRepository {
 
@@ -28,9 +29,9 @@ class BreedRepository(
             if (response.isSuccessful) {
                 response.body()?.let {
                     Result.success(it)
-                } ?: throw IOException("Response has no body")
+                } ?: throw ResponseNoBodyException()
             } else {
-                Result.failure(Exception("Response failure with code:${response.code()}"))
+                Result.failure(ResponseErrorException(response.code()))
             }
         } catch (ex: Exception) {
             Result.failure(ex)
