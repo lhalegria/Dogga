@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -45,7 +46,7 @@ fun BreedDetail(
 
     Scaffold(topBar = {
         Toolbar(
-            title = "Breed details",
+            title = stringResource(id = R.string.breed_detail),
             icon = Icons.Default.ArrowBack
         ) {
             navController?.navigateUp()
@@ -91,7 +92,7 @@ fun BreedImage(name: String, url: String = "") {
             .build(),
         placeholder = painterResource(id = R.drawable.ic_dog_placeholder),
         error = painterResource(id = R.drawable.ic_dog_placeholder),
-        contentDescription = "Picture of a dog from the $name breed.",
+        contentDescription = String.format(stringResource(id = R.string.breed_image_content_description), name),
         contentScale = ContentScale.Fit,
         modifier = Modifier
             .fillMaxWidth()

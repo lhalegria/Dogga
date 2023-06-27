@@ -11,7 +11,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import dev.lhalegria.dogga.R
 import dev.lhalegria.dogga.model.BreedModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -22,7 +24,7 @@ fun BreedList(
 ) {
     Scaffold(topBar = {
         Toolbar(
-            title = "Breeds list",
+            title = stringResource(id = R.string.breed_list),
             icon = Icons.Default.Home
         ) {}
     }) { padding ->
@@ -34,7 +36,7 @@ fun BreedList(
             LazyColumn {
                 items(dogs) {
                     BreedListItem(dog = it) {
-                        navController?.navigate("breed_details/${it.name}")
+                        navController?.navigate("$BREED_DETAIL_ROUTE/${it.name}")
                     }
                 }
             }
