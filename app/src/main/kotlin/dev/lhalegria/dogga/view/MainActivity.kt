@@ -6,14 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import dev.lhalegria.dogga.model.BreedModel
-import dev.lhalegria.dogga.view.composable.BreedDetail
-import dev.lhalegria.dogga.view.composable.BreedList
+import dev.lhalegria.dogga.view.composable.AppNavigation
 import dev.lhalegria.dogga.view.composable.EmptyDataBox
 import dev.lhalegria.dogga.view.composable.ErrorBox
 import dev.lhalegria.dogga.view.composable.LoadingBox
@@ -45,28 +39,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun DogsApp(breeds: List<BreedModel> = listOf()) {
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "breeds_list") {
-        composable("breeds_list") {
-            BreedList(breeds, navController)
-        }
-        composable(
-            route = "breed_details/{breed}",
-            arguments = listOf(navArgument("breed") {
-                type = NavType.StringType
-            })
-        ) {
-            BreedDetail(it.arguments?.getString("breed").orEmpty(), navController)
-        }
-    }
-}
-
-@Composable
 fun SuccessContainer(state: RequestState<List<BreedModel>>?) {
     val breeds = (state as? RequestState.Success<List<BreedModel>>)?.data
     if (breeds?.isNotEmpty() == true) {
-        DogsApp(breeds = breeds)
+        AppNavigation(breeds = breeds)
     } else {
         EmptyDataBox()
     }
