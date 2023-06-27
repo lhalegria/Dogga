@@ -11,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import dev.lhalegria.dogga.R
 import dev.lhalegria.dogga.view.ui.theme.Caramel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -21,7 +23,7 @@ fun Toolbar(title: String, icon: ImageVector, iconClickAction: () -> Unit) {
         navigationIcon = {
             Icon(
                 icon,
-                "Top app bar description",
+                String.format(stringResource(id = R.string.app_toolbar_content_description), title),
                 Modifier
                     .padding(12.dp)
                     .clickable { iconClickAction.invoke() }
