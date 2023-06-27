@@ -1,5 +1,6 @@
 package dev.lhalegria.dogga.view.composable
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -90,13 +91,14 @@ fun BreedImage(name: String, url: String = "") {
             .data(url)
             .crossfade(true)
             .build(),
-        placeholder = painterResource(id = R.drawable.ic_dog_placeholder),
-        error = painterResource(id = R.drawable.ic_dog_placeholder),
+        placeholder = painterResource(id = R.drawable.ic_placeholder),
+        error = painterResource(id = R.drawable.ic_placeholder),
         contentDescription = String.format(stringResource(id = R.string.breed_image_content_description), name),
-        contentScale = ContentScale.Fit,
+        contentScale = ContentScale.Crop,
         modifier = Modifier
             .fillMaxWidth()
-            .size(250.dp)
+            .size(300.dp)
             .padding(0.dp)
+            .background(color = MaterialTheme.colorScheme.onPrimary)
     )
 }

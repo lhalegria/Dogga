@@ -7,11 +7,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.navigation.NavHostController
 import dev.lhalegria.dogga.R
 import dev.lhalegria.dogga.model.BreedModel
@@ -25,7 +29,7 @@ fun BreedList(
     Scaffold(topBar = {
         Toolbar(
             title = stringResource(id = R.string.breed_list),
-            icon = Icons.Default.Home
+            icon = ImageVector.vectorResource(id = R.drawable.ic_toolbar_icon)
         ) {}
     }) { padding ->
         Surface(
