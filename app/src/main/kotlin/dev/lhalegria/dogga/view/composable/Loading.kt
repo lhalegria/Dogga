@@ -8,17 +8,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import dev.lhalegria.dogga.view.ui.theme.Caramel
 
 @Composable
 fun LoadingBox() {
-    Box(Modifier.fillMaxSize()) {
+    Box(
+        Modifier.fillMaxSize()
+    ) {
         CircularProgressIndicator(
             modifier = Modifier
                 .align(Alignment.Center)
                 .padding(50.dp),
-            progress = 1f,
-            color = Caramel
+            progress = 1f
         )
     }
 }
