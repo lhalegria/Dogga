@@ -3,4 +3,6 @@
     <string name="empty_data_message">There are no data to show</string>
     <string name="error_message">There was an error while trying to get the data</string>
     <string name="try_again">Try again</string>
+    <string name="no_body_exception">The Response has no body</string>
+    <string name="response_error">The response has failure with code: %d</string>
 </resources>
