@@ -1,5 +1,6 @@
 package dev.lhalegria.dogga.view.composable
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
@@ -17,7 +19,15 @@ import dev.lhalegria.dogga.R
 import dev.lhalegria.dogga.view.ui.theme.CaramelStrong
 
 @Composable
-fun ErrorBox() {
+fun ErrorBox(errorCause: String, action: () -> Unit) {
+    if (errorCause.isNotEmpty()) {
+        Toast.makeText(
+            LocalContext.current,
+            String.format(stringResource(R.string.error_cause), errorCause),
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -31,6 +41,8 @@ fun ErrorBox() {
             text = stringResource(id = R.string.error_message)
         )
 
-        TryAgainButton(modifier = Modifier) { }
+        TryAgainButton(modifier = Modifier) {
+            action.invoke()
+        }
     }
 }

@@ -10,4 +10,5 @@
     <string name="breed_image_content_description">Picture of a dog from the %s breed.</string>
     <string name="app_toolbar_content_description">Dogga Application Toolbar with title %s</string>
     <string name="dog_icon_content_description">An icon representing a dog</string>
+    <string name="error_cause">The error cause was: %s</string>
 </resources>
