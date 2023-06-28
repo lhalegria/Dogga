@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Dogga</string>
+    <string name="empty_data_message">There are no data to show</string>
+    <string name="error_message">There was an error while trying to get the data</string>
+    <string name="try_again">Try again</string>
+    <string name="no_body_exception">The Response has no body</string>
+    <string name="response_error">The response has failure with code: %d</string>
+    <string name="breed_list">Dog breeds list</string>
+    <string name="breed_detail">Dog breed details</string>
+    <string name="breed_image_content_description">Picture of a dog from the %s breed.</string>
+    <string name="app_toolbar_content_description">Dogga Application Toolbar with title %s</string>
+    <string name="dog_icon_content_description">An icon representing a dog</string>
+    <string name="error_cause">The error cause was: %s</string>
 </resources>
