@@ -17,7 +17,7 @@ import dev.lhalegria.dogga.R
 import dev.lhalegria.dogga.view.ui.theme.CaramelStrong
 
 @Composable
-fun EmptyDataBox() {
+fun EmptyDataBox(action: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -31,6 +31,8 @@ fun EmptyDataBox() {
             text = stringResource(id = R.string.empty_data_message)
         )
 
-        TryAgainButton(modifier = Modifier) { }
+        TryAgainButton(modifier = Modifier) {
+            action.invoke()
+        }
     }
 }

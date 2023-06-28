@@ -31,7 +31,7 @@ fun BreedLoadingPreview() {
 @Composable
 fun BreedEmptyDataPreview() {
     DoggaTheme {
-        EmptyDataBox()
+        EmptyDataBox {}
     }
 }
 
@@ -39,7 +39,7 @@ fun BreedEmptyDataPreview() {
 @Composable
 fun BreedErrorDataPreview() {
     DoggaTheme {
-        ErrorBox()
+        ErrorBox {}
     }
 }
 
