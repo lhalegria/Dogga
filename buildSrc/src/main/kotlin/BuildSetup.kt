@@ -7,8 +7,8 @@ object BuildSetup {
     const val MIN_SDK_VERSION = 30
     const val TARGET_SDK_VERSION = 33
 
-    const val VERSION_CODE = 1
-    const val VERSION_NAME = "1.0.0"
+    const val VERSION_CODE = 2
+    const val VERSION_NAME = "1.0.1"
 
     const val COMPOSE_KOTLIN_COMPILER = "1.4.7"
 
