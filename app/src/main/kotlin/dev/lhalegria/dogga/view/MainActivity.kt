@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun SuccessContainer(state: RequestState<List<BreedModel>>?, actionOnEmpty: () -> Unit) {
         val breeds = (state as? RequestState.Success<List<BreedModel>>)?.data
-        if (breeds?.isNotEmpty() == false) {
+        if (breeds?.isNotEmpty() == true) {
             AppNavigation(breeds = breeds)
         } else {
             EmptyDataBox(actionOnEmpty)
